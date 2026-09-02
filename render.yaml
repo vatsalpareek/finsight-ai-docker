@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: finsight-backend
+    env: docker
+    dockerContext: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: ohio
+    envVars:
+      - key: CORS_ORIGINS
+        value: "*"
+
+  - type: web
+    name: finsight-frontend
+    env: docker
+    dockerContext: frontend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: ohio
