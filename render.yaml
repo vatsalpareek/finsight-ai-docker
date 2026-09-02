@@ -3,7 +3,7 @@ services:
     name: finsight-backend
     env: docker
     dockerContext: backend
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./backend/Dockerfile
     plan: free
     region: ohio
     envVars:
@@ -14,6 +14,6 @@ services:
     name: finsight-frontend
     env: docker
     dockerContext: frontend
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./frontend/Dockerfile
     plan: free
     region: ohio
