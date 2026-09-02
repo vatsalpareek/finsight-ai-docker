@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web-Slinger Research Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="halftone" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="mast-title">
+    <h1>Web-Slinger Research Desk</h1>
+    <p>Four research desks argue about one asset. You see who disagreed, why, and what it means for your book.</p>
+  </div>
+  <div class="mast-status" id="sysStatus" role="status">checking systems</div>
+</header>
+
+<section class="intake panel" aria-label="Start a research run">
+  <div class="field">
+    <label for="asset">Asset</label>
+    <input id="asset" list="universe" value="NVDA" autocomplete="off" spellcheck="false">
+    <datalist id="universe"></datalist>
+  </div>
+  <div class="field">
+    <label for="investor">Investor</label>
+    <select id="investor"></select>
+  </div>
+  <div class="field">
+    <label for="horizon">Horizon (days)</label>
+    <input id="horizon" type="number" min="5" max="730" value="90">
+  </div>
+  <fieldset class="field kill">
+    <legend>Cut a feed to test degraded data</legend>
+    <label><input type="checkbox" value="market"> market</label>
+    <label><input type="checkbox" value="fundamentals"> fundamentals</label>
+    <label><input type="checkbox" value="news"> news</label>
+    <label><input type="checkbox" value="documents"> filings</label>
+  </fieldset>
+  <button id="run" class="thwip">Run research</button>
+</section>
+
+<div id="senseBar" class="sense-bar" hidden></div>
+<div id="error" class="error-panel" hidden></div>
+
+<main id="report" hidden>
+
+  <section class="verdict-row">
+    <figure class="web-wrap panel" aria-label="Signal web">
+      <svg id="web" viewBox="0 0 420 420" role="img" aria-label="Research signal web"></svg>
+      <figcaption>Each strand is a desk. Length is conviction, colour is direction. A snapped
+        strand marks a disagreement the critic refused to average away.</figcaption>
+    </figure>
+
+    <div class="verdict panel" id="verdict"></div>
+  </section>
+
+  <section class="desks" id="desks" aria-label="Research desks"></section>
+
+  <section class="split">
+    <div class="panel torn" id="conflicts"></div>
+    <div class="panel" id="critic"></div>
+  </section>
+
+  <section class="panel wide" id="thesis"></section>
+
+  <section class="split">
+    <div class="panel" id="investorPanel"></div>
+    <div class="panel" id="impact"></div>
+  </section>
+
+  <section class="split">
+    <div class="panel" id="scenarios"></div>
+    <div class="panel" id="boundaries"></div>
+  </section>
+
+  <section class="split">
+    <div class="panel" id="watch"></div>
+    <div class="panel" id="evolution"></div>
+  </section>
+
+  <section class="panel wide" id="metrics"></section>
+  <section class="panel wide" id="trace"></section>
+</main>
+
+<div id="evModal" class="modal" hidden>
+  <div class="modal-card panel">
+    <button class="close" id="modalClose" aria-label="Close">close</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
