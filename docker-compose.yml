@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  backend:
+  finsight-backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -12,12 +12,12 @@ services:
       - CORS_ORIGINS=*
     restart: unless-stopped
 
-  frontend:
+  finsight-frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
-      - backend
+      - finsight-backend
     restart: unless-stopped

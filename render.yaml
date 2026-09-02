@@ -9,6 +9,8 @@ services:
     envVars:
       - key: CORS_ORIGINS
         value: "*"
+      - key: PORT
+        value: "8080"
 
   - type: web
     name: finsight-frontend
